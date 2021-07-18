@@ -1,6 +1,4 @@
 services:
-
-  ###################################################################
   # likely able to combine apache/laravel into single dockerfile (todo: zak)
     
   apache:
@@ -14,8 +12,6 @@ services:
     build: https://github.com/scratch-enthusiasts/laravel.git
     volumes:
       - web-volume:/var/www
-      
-  ###################################################################
   
   database:
     image: mysql:latest
@@ -27,15 +23,11 @@ services:
       MYSQL_DATABASE: music-party
       MYSQL_ROOT_PASSWORD: password
       
-  ###################################################################
   # temp java version for testing
-  
   socket-server:
     build: https://github.com/scratch-enthusiasts/socket_server.git
     ports:
       - "5002:3333"
-      
-  ###################################################################
 
 volumes:
   web-volume:
