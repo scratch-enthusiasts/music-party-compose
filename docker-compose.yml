@@ -1,6 +1,6 @@
 services:
   laravel-apache:
-    build: https://github.com/scratch-enthusiasts/laravel.git
+    build: https://github.com/scratch-enthusiasts/laravel.git#main
     ports:
       - "5000:80"
     volumes:
@@ -18,7 +18,7 @@ services:
       
   # temp java version for testing
   socket-server:
-    build: https://github.com/scratch-enthusiasts/socket_server.git
+    build: https://github.com/scratch-enthusiasts/socket_server.git#main
     ports:
       - "5002:3333"
 
