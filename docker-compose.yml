@@ -24,6 +24,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
+      MYSQL_DATABASE: music-party
       MYSQL_ROOT_PASSWORD: password
       
   ###################################################################
