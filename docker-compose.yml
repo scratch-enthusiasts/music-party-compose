@@ -16,9 +16,8 @@ services:
       MYSQL_DATABASE: dbmusicparty
       MYSQL_ROOT_PASSWORD: password
       
-  # temp java version for testing
   socket-server:
-    build: https://github.com/scratch-enthusiasts/socket_server.git#main
+    build: https://github.com/scratch-enthusiasts/socket-server.git#main
     ports:
       - "5002:3333"
 
