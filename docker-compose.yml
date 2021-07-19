@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: dbmusic
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_ROOT_PASSWORD: password
 
   laravel-apache:
     build: https://github.com/scratch-enthusiasts/laravel.git#main
