@@ -11,7 +11,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_DATABASE: dbmusicparty
+      MYSQL_DATABASE: dbmusic
       MYSQL_ROOT_PASSWORD: password
       
   socket-server:
