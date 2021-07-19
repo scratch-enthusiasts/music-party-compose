@@ -1,13 +1,18 @@
 services:
   database:
     image: mysql:latest
+    restart: always
     ports:
       - "5001:3306"
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_DATABASE: dbmusic
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: "dbmusic"
+      MYSQL_USER: "musician"
+      MYSQL_PASSWORD: "scratch-enthusiasts"
+      MYSQL_ROOT_PASSWORD: "password"
+    networks:
+      - internal
 
   laravel-apache:
     build: https://github.com/scratch-enthusiasts/laravel.git#main
@@ -15,6 +20,8 @@ services:
       - "5000:80"
     depends_on:
       - "database"
+    networks:
+      - internal
       
   socket-server:
     build: https://github.com/scratch-enthusiasts/socket-server.git#main
@@ -22,3 +29,9 @@ services:
      - "5002:3333"
     depends_on:
       - "database"
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
