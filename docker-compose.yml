@@ -3,8 +3,6 @@ services:
     build: https://github.com/scratch-enthusiasts/laravel.git#main
     ports:
       - "5000:80"
-    volumes:
-      - web-volume:/var/www
   
   database:
     image: mysql:latest
@@ -19,7 +17,4 @@ services:
   socket-server:
     build: https://github.com/scratch-enthusiasts/socket-server.git#main
     ports:
-      - "5002:3333"
-
-volumes:
-  web-volume:
+     - "5002:3333"
