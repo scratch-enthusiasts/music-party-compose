@@ -1,0 +1,3 @@
+@ECHO OFF
+echo Stopping MusicParty...
+docker-compose down
